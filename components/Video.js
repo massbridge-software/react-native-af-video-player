@@ -354,7 +354,8 @@ class Video extends Component {
       playInBackground,
       playWhenInactive,
       controlDuration,
-      hideFullScreenControl
+      hideFullScreenControl,
+      audioFocusMode
     } = this.props
 
     const inline = {
@@ -392,6 +393,7 @@ class Video extends Component {
           rate={rate}
           volume={volume}
           muted={muted}
+          audioFocusMode={audioFocusMode}
           playInBackground={playInBackground} // Audio continues to play when app entering background.
           playWhenInactive={playWhenInactive} // [iOS] Video continues to play when control or notification center are shown.
           // progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
@@ -478,6 +480,7 @@ Video.propTypes = {
   theme: PropTypes.object,
   resizeMode: PropTypes.string,
   controlDuration: PropTypes.number,
+  audioFocusMode: PropTypes.string
 }
 
 Video.defaultProps = {
